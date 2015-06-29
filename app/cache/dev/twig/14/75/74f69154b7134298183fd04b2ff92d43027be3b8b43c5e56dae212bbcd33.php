@@ -22,22 +22,21 @@ class __TwigTemplate_147574f69154b7134298183fd04b2ff92d43027be3b8b43c5e56dae212b
         $this->env->loadTemplate("nav.html.twig")->display($context);
         // line 3
         echo "
+
 ";
-        // line 4
+        // line 5
         $this->displayBlock('body', $context, $blocks);
-        // line 11
+        // line 10
         $this->env->loadTemplate("end.html.twig")->display($context);
     }
 
-    // line 4
+    // line 5
     public function block_body($context, array $blocks = array())
     {
-        // line 5
+        // line 6
         echo "<br />
 <br />
 <br />
-
-    Witaj skurwysynu na Homepage.
 ";
     }
 
@@ -53,6 +52,6 @@ class __TwigTemplate_147574f69154b7134298183fd04b2ff92d43027be3b8b43c5e56dae212b
 
     public function getDebugInfo()
     {
-        return array (  36 => 5,  33 => 4,  29 => 11,  27 => 4,  24 => 3,  22 => 2,  20 => 1,);
+        return array (  37 => 6,  34 => 5,  30 => 10,  28 => 5,  24 => 3,  22 => 2,  20 => 1,);
     }
 }

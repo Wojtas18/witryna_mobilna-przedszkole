@@ -1,0 +1,75 @@
+body {
+    background: url(../img/tlo.jpg);
+    padding-top: 60px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: italic;
+}
+
+.navbar-brand {
+	display: none;
+}
+
+.img-full {
+    min-width: 100%;
+}
+
+.box {
+    margin-bottom: 20px;
+    padding: 30px 15px;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}
+
+.navbar-nav {
+	display: table;
+	table-layout: fixed;
+	margin: auto;
+	font-size: 1.5em;
+	float: none;
+}
+
+.box:after {
+        content: '';
+        display: table;
+        clear: both;
+}
+
+footer {
+    background: #fff;
+}
+
+.jumbotron {
+    background-color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.kontakt {
+    font-size: 1.25em;
+    line-height: 1.6;
+    color: #000;
+}
+
+.powrot {
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+
+.navbar-brand {
+    display: initial;
+	text-transform: uppercase;
+}
+
+.navbar-nav {
+    display: initial;
+}
+    
+.powrot {
+    display: initial;
+}
+}
