@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DzieciObecnosci" table="dzieci_obecnosci">
+    <indexes>
+      <index name="IDX_423111A6F846B489" columns="id_dziecka"/>
+    </indexes>
+    <id name="data" type="date" column="data"/>
+    <id name="idDziecka" association-key="true"/>
+    <field name="obecny" type="string" column="obecny" length="3" nullable="true"/>
+    <one-to-one field="idDziecka" target-entity="Dzieci">
+      <join-columns>
+        <join-column name="id_dziecka" referenced-column-name="id_dziecka"/>
+      </join-columns>
+    </one-to-one>
+  </entity>
+</doctrine-mapping>

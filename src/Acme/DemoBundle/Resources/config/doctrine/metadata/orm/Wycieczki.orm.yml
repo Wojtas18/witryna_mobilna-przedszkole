@@ -1,0 +1,40 @@
+Wycieczki:
+    type: entity
+    table: wycieczki
+    id:
+        idWycieczki:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: id_wycieczki
+            generator:
+                strategy: IDENTITY
+    fields:
+        nazwaWycieczki:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            column: nazwa_wycieczki
+        data:
+            type: date
+            nullable: false
+            comment: ''
+        cena:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+    manyToMany:
+        idDziecka:
+            targetEntity: Dzieci
+            cascade: {  }
+            mappedBy: idWycieczki
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

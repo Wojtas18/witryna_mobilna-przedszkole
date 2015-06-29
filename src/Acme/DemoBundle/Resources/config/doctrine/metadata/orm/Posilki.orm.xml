@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Posilki" table="posilki">
+    <indexes>
+      <index name="pcpfk" columns="typ_posilku"/>
+    </indexes>
+    <id name="idPosilku" type="bigint" column="id_posilku">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="typPosilku" target-entity="CennikPosilkow">
+      <join-columns>
+        <join-column name="typ_posilku" referenced-column-name="typ_posilku"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-many field="idDziecka" target-entity="Dzieci" mapped-by="idPosilku"/>
+  </entity>
+</doctrine-mapping>

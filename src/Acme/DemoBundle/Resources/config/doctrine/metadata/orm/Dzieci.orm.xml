@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Dzieci" table="dzieci">
+    <id name="idDziecka" type="bigint" column="id_dziecka">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idRodzica" type="bigint" column="id_rodzica" nullable="false"/>
+    <field name="imie" type="string" column="imie" length="20" nullable="false"/>
+    <field name="nazwisko" type="string" column="nazwisko" length="20" nullable="false"/>
+    <field name="dataUrodzenia" type="date" column="data_urodzenia" nullable="true"/>
+    <many-to-many field="idWycieczki" target-entity="Wycieczki" inversed-by="idDziecka">
+      <join-table name="dzieci_wycieczki">
+        <join-columns>
+          <join-column name="id_dziecka" referenced-column-name="id_dziecka"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="id_wycieczki" referenced-column-name="id_wycieczki"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+    <many-to-many field="idPosilku" target-entity="Posilki" inversed-by="idDziecka">
+      <join-table name="dzieci_posilki">
+        <join-columns>
+          <join-column name="id_dziecka" referenced-column-name="id_dziecka"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="id_posilku" referenced-column-name="id_posilku"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

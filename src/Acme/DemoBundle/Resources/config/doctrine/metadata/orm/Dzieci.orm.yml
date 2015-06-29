@@ -1,0 +1,71 @@
+Dzieci:
+    type: entity
+    table: dzieci
+    id:
+        idDziecka:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: id_dziecka
+            generator:
+                strategy: IDENTITY
+    fields:
+        idRodzica:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: id_rodzica
+        imie:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+        nazwisko:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+        dataUrodzenia:
+            type: date
+            nullable: true
+            comment: ''
+            column: data_urodzenia
+    manyToMany:
+        idPosilku:
+            targetEntity: Posilki
+            cascade: {  }
+            mappedBy: null
+            inversedBy: idDziecka
+            joinTable:
+                name: dzieci_posilki
+                joinColumns:
+                    -
+                        name: id_dziecka
+                        referencedColumnName: id_dziecka
+                inverseJoinColumns:
+                    -
+                        name: id_posilku
+                        referencedColumnName: id_posilku
+            orderBy: null
+        idWycieczki:
+            targetEntity: Wycieczki
+            cascade: {  }
+            mappedBy: null
+            inversedBy: idDziecka
+            joinTable:
+                name: dzieci_wycieczki
+                joinColumns:
+                    -
+                        name: id_dziecka
+                        referencedColumnName: id_dziecka
+                inverseJoinColumns:
+                    -
+                        name: id_wycieczki
+                        referencedColumnName: id_wycieczki
+            orderBy: null
+    lifecycleCallbacks: {  }

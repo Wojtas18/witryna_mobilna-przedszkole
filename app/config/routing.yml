@@ -1,0 +1,11 @@
+acme_hello:
+    resource: "@AcmeHelloBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation
+
+reg:
+     path:      /reg
+     defaults:     { _controller: AcmeDemoBundle:Reg:reg }

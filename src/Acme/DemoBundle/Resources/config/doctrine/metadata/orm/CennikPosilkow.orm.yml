@@ -1,0 +1,22 @@
+CennikPosilkow:
+    type: entity
+    table: cennik_posilkow
+    id:
+        typPosilku:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            id: true
+            column: typ_posilku
+            generator:
+                strategy: IDENTITY
+    fields:
+        cena:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+    lifecycleCallbacks: {  }

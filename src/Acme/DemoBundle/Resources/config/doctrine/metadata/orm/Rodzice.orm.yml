@@ -1,0 +1,57 @@
+Rodzice:
+    type: entity
+    table: rodzice
+    id:
+        idRodzica:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: id_rodzica
+            generator:
+                strategy: IDENTITY
+    fields:
+        imie:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+        nazwisko:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+        plec:
+            type: string
+            nullable: false
+            length: 10
+            fixed: false
+            comment: ''
+        dataUrodzenia:
+            type: date
+            nullable: true
+            comment: ''
+            column: data_urodzenia
+        ulica:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+        kodPocztowy:
+            type: string
+            nullable: false
+            length: 6
+            fixed: false
+            comment: ''
+            column: kod_pocztowy
+        miejscowosc:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }

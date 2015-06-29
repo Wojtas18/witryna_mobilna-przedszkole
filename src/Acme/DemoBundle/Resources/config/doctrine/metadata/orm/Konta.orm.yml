@@ -1,0 +1,28 @@
+Konta:
+    type: entity
+    table: konta
+    id: {  }
+    fields:
+        login:
+            type: string
+            nullable: false
+            length: 10
+            fixed: false
+            comment: ''
+        haslo:
+            type: string
+            nullable: false
+            length: 10
+            fixed: false
+            comment: ''
+    oneToOne:
+        idRodzica:
+            targetEntity: Rodzice
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_rodzica:
+                    referencedColumnName: id_rodzica
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

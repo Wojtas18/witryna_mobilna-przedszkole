@@ -1,0 +1,32 @@
+DzieciObecnosci:
+    type: entity
+    table: dzieci_obecnosci
+    indexes:
+        IDX_423111A6F846B489:
+            columns:
+                - id_dziecka
+    id:
+        data:
+            type: date
+            nullable: false
+            comment: ''
+            default: '0000-00-00'
+            id: true
+    fields:
+        obecny:
+            type: string
+            nullable: true
+            length: 3
+            fixed: false
+            comment: ''
+    oneToOne:
+        idDziecka:
+            targetEntity: Dzieci
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_dziecka:
+                    referencedColumnName: id_dziecka
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

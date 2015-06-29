@@ -1,0 +1,36 @@
+Posilki:
+    type: entity
+    table: posilki
+    indexes:
+        pcpfk:
+            columns:
+                - typ_posilku
+    id:
+        idPosilku:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: id_posilku
+            generator:
+                strategy: IDENTITY
+    manyToOne:
+        typPosilku:
+            targetEntity: CennikPosilkow
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                typ_posilku:
+                    referencedColumnName: typ_posilku
+            orphanRemoval: false
+    manyToMany:
+        idDziecka:
+            targetEntity: Dzieci
+            cascade: {  }
+            mappedBy: idPosilku
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

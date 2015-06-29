@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Rodzice" table="rodzice">
+    <id name="idRodzica" type="bigint" column="id_rodzica">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="imie" type="string" column="imie" length="20" nullable="false"/>
+    <field name="nazwisko" type="string" column="nazwisko" length="20" nullable="false"/>
+    <field name="plec" type="string" column="plec" length="10" nullable="false"/>
+    <field name="dataUrodzenia" type="date" column="data_urodzenia" nullable="true"/>
+    <field name="ulica" type="string" column="ulica" length="20" nullable="false"/>
+    <field name="kodPocztowy" type="string" column="kod_pocztowy" length="6" nullable="false"/>
+    <field name="miejscowosc" type="string" column="miejscowosc" length="20" nullable="false"/>
+  </entity>
+</doctrine-mapping>
